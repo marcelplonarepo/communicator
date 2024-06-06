@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  username String
+  email    String     @unique
+  password String
+  chat     chats[]    @relation("chat")
+  message  messages[] @relation("message")
+  profile  String
+  status   Boolean    @default(false)
+  socketId String     @default("")
+}
+
+model chats {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  room     rooms   @relation(name: "room", fields: [roomId], references: [id])
+  roomId   String  @db.ObjectId
+  user     user    @relation(name: "chat", fields: [userId], references: [id])
+  userId   String  @db.ObjectId
+  time     Int     @default(0)
+  lastSeen String? @db.ObjectId
+
+
+  @@unique([roomId, userId])
+}
+
+model rooms {
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  room     String     @default(cuid())
+  call     String     @default(cuid())
+  type     String
+  chat     chats[]    @relation("room")
+  messages messages[] @relation("location")
+}
+
+model messages {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  message   String
+  createdAt Int    
+  room      rooms  @relation(name: "location", fields: [roomId], references: [id])
+  roomId    String @db.ObjectId
+  user      user   @relation(name: "message", fields: [userId], references: [id])
+  userId    String @db.ObjectId
+}

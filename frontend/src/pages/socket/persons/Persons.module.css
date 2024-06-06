@@ -1,0 +1,98 @@
+.theme {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+
+
+.personList {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.105);
+}
+
+
+.personList > div{
+    max-height: calc(100vh - 70px);
+    width:50vw;
+    background-color: blueviolet;
+    overflow-y: auto;
+}
+
+.personList > div > div {
+    width:50vw;
+    height: 90px;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(248, 248, 248);
+    border-bottom: 2px solid rgb(234, 234, 234);
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.personList > div > div:hover {
+    background-color :rgb(235, 235, 235) ;
+    box-shadow:  0 0 5px rgba(0, 0, 0, 0.193) inset;
+}
+
+.personList > div > div > img {
+    width:50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.personList > form {
+    height: 70px;
+    width:50vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(237, 237, 237);
+    justify-content: center;
+    position: relative;
+}
+
+.personList > form > div{
+    width: 36vw;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.personList > form > div > textarea{
+    width:100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    padding-left: 50px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+.personList form div div{
+    position: absolute;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.personList form div div svg{
+    fill:rgb(110, 0, 228);
+    width:24px;
+    height: 24px;
+}

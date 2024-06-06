@@ -1,0 +1,76 @@
+.call {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+}
+
+video {
+  object-fit: cover;
+}
+
+.notMy video {
+  background-color: rgb(19, 0, 40);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.my video {
+  background-color: rgb(25, 0, 57);
+  border-radius: 10px;
+  border: solid 2px rgb(64, 0, 113);
+  width: 303px;
+  height: 170px;
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: 30px;
+}
+
+.disconnect {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.disconnect svg {
+  fill: white;
+  width: 32px;
+  height: 32px;
+}
+
+.hide {
+  display: none;
+}
+
+.toggleVisibility{
+  padding: 50px 100px;
+  position: absolute;
+  z-index: 3;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toggleVisibility .callBar{
+  background-color: rgb(37, 0, 71);
+  visibility: hidden;
+}
+
+.callBar {
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggleVisibility:hover .callBar{
+  visibility: visible;
+}

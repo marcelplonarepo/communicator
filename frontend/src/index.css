@@ -1,0 +1,16 @@
+:root {
+  --form-first: #6b1abc;
+  --form-second: rgb(77, 0, 153);
+  --auth-first: #6b1abc;
+  --auth-second: rgb(77, 0, 153);
+}
+
+
+body {
+  margin: 0;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}

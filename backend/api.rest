@@ -1,0 +1,104 @@
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username": "5",
+    "email": "5",
+    "password": "5"
+}
+
+###
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email": "5"
+}
+
+###
+
+POST http://localhost:5000/auth/log
+Content-Type: application/json
+
+{
+    "userId": "63e50c44c9695eb2346d7983",
+    "friendId": "63e50c4fc9695eb2346d7984"
+}
+
+###
+POST http://localhost:5000/auth/show
+Content-Type: application/json
+
+{
+    "userId": "63e50c4fc9695eb2346d7984"
+}
+
+
+###
+
+POST http://localhost:5000/data/people
+Content-Type: application/json
+
+{
+    "search": "3"
+}
+
+###
+
+POST http://localhost:5000/data/checkRoom
+Content-Type: application/json
+
+{
+    "personId": "63ecd39e3da60fb5a0f6964e",
+    "userId": "63ecd3943da60fb5a0f6964b"
+}
+###
+POST http://localhost:5000/data/roomData
+Content-Type: application/json
+
+{
+    "roomId": "63f2472ccd557905e567105f",
+    "userId": "63f2471acd557905e567105e"
+}
+
+###
+POST http://localhost:5000/auth/receive
+Content-Type: application/json
+
+{
+    "data": {
+        "roomId": "63ecd42c5b873fd5af9bac60",
+        "userId": "63ecd3943da60fb5a0f6964b"
+    }
+}
+
+###
+POST http://localhost:5000/socket/countNew
+Content-Type: application/json
+
+{
+    "data": {
+        "userId": "63ee697a9fe7661e87707236"
+    }
+}
+
+### 
+POST http://localhost:5000/data/showAll
+Content-Type: application/json
+
+{
+    "data": {
+        "userId": "63ed7797e8a812af71c1e987"
+    }
+}
+
+###
+
+POST http://localhost:5000/socket/make-call
+Content-Type: application/json
+
+{
+    "roomId": "63f262929f4bda992e87d007",
+    "userId": "63f262619f4bda992e87d004"
+}
